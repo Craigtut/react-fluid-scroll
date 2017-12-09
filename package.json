@@ -2,14 +2,20 @@
   "name": "react-fluid-scroll",
   "version": "0.0.1",
   "description": "Fluid scrolling through 3D transforms of the content.",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "unpkg": "dist/react-fluid-scroll.min.js",
   "scripts": {
+    "build": "webpack --env dev && webpack --env build && npm run test",
+    "dev": "webpack --progress --colors --watch --env dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Craigtut/react-fluid-scroll.git"
   },
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "react",
     "scroll",
@@ -26,5 +32,24 @@
   "bugs": {
     "url": "https://github.com/Craigtut/react-fluid-scroll/issues"
   },
-  "homepage": "https://github.com/Craigtut/react-fluid-scroll#readme"
+  "homepage": "https://github.com/Craigtut/react-fluid-scroll#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.2",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-es2015": "^6.24.1",
+    "eslint": "^4.12.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-formatter-pretty": "^1.1.0",
+    "eslint-plugin-compat": "^1.0.2",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-react": "^6.10.3",
+    "webpack": "^3.8.1",
+    "yargs": "^10.0.3"
+  }
 }

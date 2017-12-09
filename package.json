@@ -1,0 +1,30 @@
+{
+  "name": "react-fluid-scroll",
+  "version": "0.0.1",
+  "description": "Fluid scrolling through 3D transforms of the content.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Craigtut/react-fluid-scroll.git"
+  },
+  "keywords": [
+    "react",
+    "scroll",
+    "smooth",
+    "scroll",
+    "react",
+    "fluid",
+    "scroll",
+    "scrolling",
+    "smooth"
+  ],
+  "author": "Craig Tuttle",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Craigtut/react-fluid-scroll/issues"
+  },
+  "homepage": "https://github.com/Craigtut/react-fluid-scroll#readme"
+}

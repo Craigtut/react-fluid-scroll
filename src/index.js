@@ -1,3 +1,7 @@
 import ReactFluidScroll from './components/reactfluidscroll';
+import Testing from './components/testing';
 
-export default ReactFluidScroll;
+export default {
+  ReactFluidScroll,
+  Testing,
+};

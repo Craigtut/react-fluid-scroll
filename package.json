@@ -15,7 +15,8 @@
     "url": "git+https://github.com/Craigtut/react-fluid-scroll.git"
   },
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "keywords": [
     "react",

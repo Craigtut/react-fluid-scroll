@@ -5,6 +5,7 @@ class Testing extends Component {
     return (
       <div id="testing">
         Hello World
+        <h2>Testing</h2>
       </div>
     );
   }

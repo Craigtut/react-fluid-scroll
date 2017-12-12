@@ -2,7 +2,7 @@
   "name": "react-fluid-scroll",
   "version": "0.0.1",
   "description": "Fluid scrolling through 3D transforms of the content.",
-  "main": "src/index.js",
+  "main": "dist/reactfluidscroll.min.js",
   "jsnext:main": "src/index.js",
   "unpkg": "dist/reactfluidscroll.min.js",
   "scripts": {

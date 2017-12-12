@@ -6,7 +6,5 @@ node_modules
 .idea
 .vscode
 
-# Remove build folders
-dist
 
 .DS_Store

@@ -1,7 +1,5 @@
-import ReactFluidScroll from './components/reactfluidscroll';
-import Testing from './components/testing';
+import reactfluidscroll from './components/reactfluidscroll';
+import testing from './components/testing';
 
-export default {
-  ReactFluidScroll,
-  Testing,
-};
+export const ReactFluidScroll = reactfluidscroll;
+export const Testing = testing;

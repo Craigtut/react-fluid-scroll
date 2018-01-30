@@ -23,20 +23,19 @@ const config = {
     path: __dirname + '/dist',
     filename: outputFile,
     library: libraryName,
-    libraryTarget: 'umd',
-    umdNamedDefine: true
+    libraryTarget: 'commonjs2',
   },
   module: {
     rules: [
       {
         test: /(\.jsx|\.js)$/,
         loader: 'babel-loader',
-        exclude: /(node_modules|bower_components)/
+        exclude: /(node_modules|bower_components|dist)/
       },
       {
         test: /(\.jsx|\.js)$/,
         loader: 'eslint-loader',
-        exclude: /node_modules/
+        exclude: /(node_modules|bower_components|dist)/
       }
     ]
   },

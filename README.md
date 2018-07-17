@@ -1,6 +1,8 @@
 # React Fluid Scroll
 
-The goal of this project is to create an easy to use wrapper that will create a virtualized scrolling effect to control the ways in which a page is scrolled.
+React fluid scroll sets up and manages a virtualized scroll element that allows for a smooth scroll animation. 
+
+See (https://www.Craigtut.com)[Craigtut.com] to see the scroll smoothing in effect.
 
 ## Installation
 
@@ -16,19 +18,23 @@ npm install react-fluid-scroll -save
 
 Basic Usage
 ```javascript
-import { renderProject } from 'behance-react';
+import ReactFluidScroll from 'react-fluid-scroll';
 
-class Project extends Component {
-  /* ... something more ... */
-  render() {
-    const { project } = this.state; // Get behance project data from somewhere
-    const projectRender = renderProject(project);
-    return (
-      <div>
-        {projectRender}
-      </div>
-    );
-  }
-}
+<ReactFluidScroll viscosity={0.2}>
+    /* your page or content */
+</ReactFluidScroll>
 
 ```
+
+Optional Props:
+scrollHook: callback function that is call on scroll events. This allows you to tap into the virtualScrolls current position rather than the window's current scroll location.
+callback parameter structure: { virtual: { y: this.currentVirtualScroll } }
+
+Example callback
+```javascript
+    this.scrollMagicBridge = (scroll) => {
+      this.props.controller.scrollPos(() => scroll.virtual.y);
+      this.props.controller.update();
+    };
+```
+

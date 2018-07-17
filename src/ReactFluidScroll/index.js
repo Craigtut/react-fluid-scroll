@@ -1,37 +1,33 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import FluidScroll from './FluidScroll';
 
 class ReactFluidScroll extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      contentElement: null,
-      bodyHeight: 0,
-    };
+  componentDidMount() {
+    const { viscosity, scrollHook } = this.props;
+    this.fluidScroll = new FluidScroll({
+      contentElement: document.getElementById('fluid-scroll-content'),
+      spacerElement: document.getElementById('body-spacer'),
+      viewportElement: document.getElementById('fluid-scroll-viewport'),
+      viscosity,
+      onUpdate: scrollHook,
+    });
   }
 
-  componentDidMount() {
-    const { contentElement } = this.state;
-    if (!contentElement) this.setState({ contentElement: document.getElementById('fluid-scroll-content') });
-    window.addEventListener('resize', this.updateHeight);
+  componentDidUpdate(nextProps) {
+    this.fluidScroll.finishedLoading();
   }
 
   componentWillUnmount() {
-    removeEventListener('resize', this.updateHeight);
-  }
-
-  updateHeight() {
-    const { contentElement } = this.state;
-    this.setState({ bodyHeight: contentElement.clientHeight });
+    this.fluidScroll.destroy();
   }
 
   render() {
     const { children } = this.props;
-    const { bodyHeight } = this.state;
 
     const bodySpacer = {
       position: 'relative',
-      height: bodyHeight,
+      zIndex: 0,
     };
 
     const viewportStyle = {
@@ -41,6 +37,7 @@ class ReactFluidScroll extends Component {
       width: '100%',
       height: '100vh',
       overflow: 'hidden',
+      zIndex: 1,
     };
 
     const contentStyle = {
@@ -62,7 +59,17 @@ class ReactFluidScroll extends Component {
 }
 
 ReactFluidScroll.propTypes = {
-  children: PropTypes.object.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
+  scrollHook: PropTypes.func,
+  viscosity: PropTypes.number,
+};
+
+ReactFluidScroll.defaultProps = {
+  scrollHook: () => {},
+  viscosity: 0.2,
 };
 
 export default ReactFluidScroll;

@@ -1,10 +1,8 @@
-# Dependency directory
-# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
-node_modules
-
-# Remove some common IDE working directories
-.idea
-.vscode
-
-
+*.swp
+*~
+*.iml
+.*.haste_cache.*
 .DS_Store
+.idea
+npm-debug.log
+node_modules

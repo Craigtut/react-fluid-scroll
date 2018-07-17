@@ -1,49 +1,27 @@
-/* global __dirname, require, module*/
-
-const webpack = require('webpack');
-const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
-const path = require('path');
-const env = require('yargs').argv.env; // use --env with webpack 2
-
-let libraryName = 'reactfluidscroll';
-
-let plugins = [], outputFile;
-
-if (env === 'build') {
-  plugins.push(new UglifyJsPlugin({ minimize: true }));
-  outputFile = libraryName + '.min.js';
-} else {
-  outputFile = libraryName + '.js';
-}
-
-const config = {
-  entry: __dirname + '/src/index.js',
-  devtool: 'source-map',
+var path = require('path');
+module.exports = {
+  entry: './src/index.js',
   output: {
-    path: __dirname + '/dist',
-    filename: outputFile,
-    library: libraryName,
-    libraryTarget: 'commonjs2',
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'index.js',
+    libraryTarget: 'commonjs2'
   },
   module: {
     rules: [
       {
-        test: /(\.jsx|\.js)$/,
-        loader: 'babel-loader',
-        exclude: /(node_modules|bower_components|dist)/
-      },
-      {
-        test: /(\.jsx|\.js)$/,
-        loader: 'eslint-loader',
-        exclude: /(node_modules|bower_components|dist)/
+        test: /\.js$/,
+        include: path.resolve(__dirname, 'src'),
+        exclude: /(node_modules|bower_components|build)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['env']
+          }
+        }
       }
     ]
   },
-  resolve: {
-    modules: [path.resolve('./node_modules'), path.resolve('./src')],
-    extensions: ['.json', '.js']
-  },
-  plugins: plugins
+  externals: {
+    'react': 'commonjs react',
+  }
 };
-
-module.exports = config;

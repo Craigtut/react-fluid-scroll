@@ -1,12 +1,34 @@
-# REACT FLUID SCROLL
+# React Fluid Scroll
 
-This creates a "virtual" scroll container around your content and uses a 3d transform to animate the content when a page is scrolled. This produces a much more fluid and controlled scrolling effect.
+The goal of this project is to create an easy to use wrapper that will create a virtualized scrolling effect to control the ways in which a page is scrolled.
 
-## Install
+## Installation
 
 ```
-npm install https://github.com/Craigtut/react-fluid-scroll.git
+npm install react-fluid-scroll -save
 ```
 
-or yarn...
+... or yarn
 
+
+## Usage
+
+
+Basic Usage
+```javascript
+import { renderProject } from 'behance-react';
+
+class Project extends Component {
+  /* ... something more ... */
+  render() {
+    const { project } = this.state; // Get behance project data from somewhere
+    const projectRender = renderProject(project);
+    return (
+      <div>
+        {projectRender}
+      </div>
+    );
+  }
+}
+
+```

@@ -2,7 +2,7 @@
 
 React fluid scroll sets up and manages a virtualized scroll element that allows for a smooth scroll animation. 
 
-See (https://www.Craigtut.com)[Craigtut.com] to see the scroll smoothing in effect.
+See [Craigtut.com](https://www.Craigtut.com) to see the scroll smoothing in effect.
 
 ## Installation
 

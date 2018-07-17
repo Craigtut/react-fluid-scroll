@@ -27,8 +27,10 @@ import ReactFluidScroll from 'react-fluid-scroll';
 ```
 
 Optional Props:
-scrollHook: callback function that is call on scroll events. This allows you to tap into the virtualScrolls current position rather than the window's current scroll location.
-callback parameter structure: { virtual: { y: this.currentVirtualScroll } }
+
+*scrollHook: callback function that is call on scroll events. This allows you to tap into the virtualScrolls current position rather than the window's current scroll location.
+
+*callback parameter structure: { virtual: { y: this.currentVirtualScroll } }
 
 Example callback
 ```javascript

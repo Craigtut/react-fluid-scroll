@@ -41,7 +41,7 @@
         "eslint-plugin-react": "^4.2.3",
         "jest": "^22.0.5",
         "react-addons-test-utils": "^15.0.0",
-        "webpack": "^2.6.1"
+        "webpack": "^5.75.0"
     },
     "peerDependencies": {
         "react": "^16.0.0",
